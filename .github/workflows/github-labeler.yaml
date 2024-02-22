@@ -14,6 +14,11 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-22.04
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
       - uses: actions/labeler@ac9175f8a1f3625fd0d4fb234536d26811351594 # v4
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'

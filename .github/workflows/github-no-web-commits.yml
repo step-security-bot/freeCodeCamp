@@ -14,6 +14,11 @@ jobs:
   has-web-commits:
     runs-on: ubuntu-22.04
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
       - name: Check if PR author is allow-listed
         id: pr_author
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6

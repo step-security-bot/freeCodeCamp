@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: docker
+    directory: /.devcontainer
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /.devcontainer/docs
+    schedule:
+      interval: daily
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /api-server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /api
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /curriculum-server
+    schedule:
+      interval: daily
